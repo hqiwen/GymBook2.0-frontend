@@ -6,17 +6,40 @@
              <dt><h1>{{title}}</h1></dt>
              <dd>{{info}}</dd>
         </dl>
-        <el-button type="default" icon="el-icon-star-off" class="btn">关注</el-button>
+        <el-button  @click="focusChange()"  plain  :class="{ 'btn el-icon-star-on toFocus' : focusFlag, 'btn el-icon-star-off': !focusFlag }">关注</el-button>
     </div>
 </template>
 
 
 <script>
 export default {
-    props: ['imgSrc', 'title', 'info'],
+    data(){
+        return{
+            focusFlag:false,
+        }
+    },
+    props: ['gymId','imgSrc', 'title', 'info','like'],
+    methods:{
+      focusState () {
+        this.like.includes(this.gymId)?this.focusFlag=true:this.focusFlag=false;
+      },
+      focusChange () {
+        if(this.focusFlag){
+            let i = this.like.indexOf(this.gymId)
+            this.like.splice(i,1)
+            this.focusFlag = false
+        }else{
+            this.like.push(this.gymId)
+            this.focusFlag = true
+        }
+        this.$store.dispatch('changeUserLike',this.like)//修改用户的关注信息
+        console.log(this.$store.getters.getUserLike.like)
+      }
+    },
     mounted:function(){
-       console.log(this.imgSrc)
+       this.focusState();
     }
+    
 };
 </script>
 
@@ -45,6 +68,11 @@ export default {
         position: absolute;
         top:3px;
         right:3px;
+    }
+    .toFocus{
+        background-color: rgb(103,194,58);
+        color:white;
+        border-color: white;
     }
 
     

@@ -23,7 +23,7 @@
     </el-main>
     <el-footer>
       <el-row class="btns">
-        <el-button type="default" icon="el-icon-star-off" class="care">关注</el-button>
+        <el-button @click="focusChange()" :class="{ 'el-icon-star-on toFocus' : focusFlag, 'el-icon-star-off': !focusFlag }">关注</el-button>
         <el-button type="primary" class="reserve">立即预定</el-button>
       </el-row>
     </el-footer>
@@ -49,14 +49,41 @@ export default {
     money: {
       type: Number,
       default: 3.00
+    },
+    gymId: {
+      type: Number
+    },
+    like:{
+      type:Array
     }
   },
   data() {
     return {
       value1: '',
-      value5: [new Date(2016, 9, 10, 8, 0), new Date(2016, 9, 10, 22, 0)]
+      value5: [new Date(2016, 9, 10, 8, 0), new Date(2016, 9, 10, 22, 0)],
+      focusFlag:false,
     }
-  }
+  },
+  methods:{
+    focusState () {
+      this.like.includes(this.gymId)?this.focusFlag=true:this.focusFlag=false;
+    },
+    focusChange () {
+      if(this.focusFlag){
+        let i = this.like.indexOf(this.gymId)
+        this.like.splice(i,1)
+        this.focusFlag = false
+      }else{
+        this.like.push(this.gymId)
+        this.focusFlag = true
+      }
+      this.$store.dispatch('changeUserLike',this.like)//修改用户的关注信息
+      console.log(this.$store.getters.getUserLike.like)
+    }
+  },
+  mounted:function(){
+   this.focusState();
+ }
 }
 </script>
 
@@ -116,5 +143,10 @@ export default {
 }
 .btns {
   text-align: left;
+}
+.toFocus{
+  background-color: rgb(103,194,58);
+  color:white;
+  border-color: white;
 }
 </style>
