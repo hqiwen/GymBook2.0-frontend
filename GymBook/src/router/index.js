@@ -22,6 +22,7 @@ import test from '../components/bookCenter'
 
 Vue.use(Router)
 
+
 const router = new Router({
     mode: "history",
     scrollBehavior(to,from,savedPosition){
