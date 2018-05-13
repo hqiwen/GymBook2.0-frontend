@@ -43,7 +43,6 @@ const mutations = {
     state.userLike.like = data
   }
 }
-
 export default {
   state,
   getters,

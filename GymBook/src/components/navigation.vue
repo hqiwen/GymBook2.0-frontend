@@ -4,25 +4,24 @@
        <!-- <img src='../../assets/logo.png'> -->
        <div><router-link to='/login'>登录</router-link></div>
        <ul>
-
          <li><router-link to='demo'>Demo</router-link></li>
-         <li><router-link to='/south/badminton'>预定大厅</router-link></li>
-         <li><router-link to='/filterBox'>预订中心</router-link></li>
+         <li><router-link to=''>预定大厅</router-link></li>
+         <li><router-link to='/bookcenter'>预订中心</router-link></li>
          <li><router-link to=''>场馆简介</router-link></li>
          <li><router-link to=''>管理制度</router-link></li>
        </ul>
     </header>
-     
+
   </div>
 </template>
 <script>
 export default {
-  
+
 }
 </script>
 <style lang="scss" scoped type="text/css">
   $greenColor: #005824;
-  
+
   $lightGreenColor:#007731;
   $whiteColor:#FFF;
   $width:100%;
@@ -39,7 +38,7 @@ export default {
     font-size:16px;
     color:$whiteColor;
   }
-  div{ 
+  div{
     height:$height;
     width:$width;
     background-color:$greenColor;
@@ -61,7 +60,7 @@ export default {
       padding:0 1em;
       background-color:rgba(0,0,0,0.3);
       border-radius: 5px;
-      
+
     }
     img{
       position: absolute;
@@ -83,5 +82,5 @@ export default {
       }
     }
   }
-  
+
 </style>
