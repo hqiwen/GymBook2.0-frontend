@@ -64,7 +64,8 @@ export default {
         Navigation
     },
     mounted:function(){
-       console.log(this.imgSrc)
+        this.$store.dispatch('putGymSideInfo')
+        console.log(this.$store.getters.getGymSideInfo)
     },
     methods: {
       onSessionDateChange: function(date) {

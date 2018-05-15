@@ -1,6 +1,6 @@
-import demo from './demo';
+import bookDetail from './bookDetail';
 import bookCenter from './bookCenter';
 export default {
-  demo,
+  bookDetail,
   bookCenter
 }

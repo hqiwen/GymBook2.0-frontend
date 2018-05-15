@@ -1,4 +1,6 @@
-export const GYM_DETAIL = 'GYM_DETAIL';
+export const GET_GYMSIDEINFO = 'GET_GYMSIDEINFO';
+export const GET_SITESTABLE = 'GET_SITESTABLE';
+export const GET_STOCKLIST = 'GET_STOCKLIST';
 export const GET_USERLIKE = 'GET_USERLIKE';
 export const CHANGE_USERLIKE = 'CHANGE_USERLIKE';
 export const GYM_LIST = 'GYM_LIST';

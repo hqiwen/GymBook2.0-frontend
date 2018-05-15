@@ -46,7 +46,7 @@ export default {
             this.focusFlag = true
         }
         this.$store.dispatch('changeUserLike',this.like)//修改用户的关注信息
-        console.log(this.$store.getters.getUserLike.like)
+        console.log(this.$store.getters.getGymDetail)
       }
     },
 };
