@@ -1,0 +1,122 @@
+{
+"data":[
+  {
+    "date":"2018-05-08",
+    "count": 3,
+    "gym": {
+      "title": "篮球场",
+      "description": "东区篮球场",
+      "html": "4块篮球场",
+      "addr": "东区",
+      "rank": 8,
+      "status": 0,
+      "limit_time": "2018-04-23 14:00 ~ 2018-04-23 15:00",
+      "open_time": "9:00 ~ 21:00",
+      "buy_limit_num": 8
+    },
+    "list": [
+      {
+        "reservedTime": [
+          "2018-05-02 14:00 ~ 2018-05-02 15:00",
+          [{
+            "id": 1,
+            "status": 0
+          },{
+            "id": 2,
+            "status": 0
+          }
+          ]
+        ]
+      },
+      {
+        "reservedTime": [
+          "2018-05-02 18:00 ~ 2018-05-02 20:00",
+          [
+            {
+              "id": 3,
+              "status": 0
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2018-05-09",
+    "count": 3,
+    "gym": {
+      "title": "篮球场",
+      "description": "东区篮球场",
+      "html": "4块篮球场",
+      "addr": "东区",
+      "rank": 8,
+      "status": 0,
+      "limit_time": "2018-04-23 14:00 ~ 2018-04-23 15:00",
+      "open_time": "9:00 ~ 21:00",
+      "buy_limit_num": 8
+    },
+    "list": [
+      {
+        "site": {
+          "id": 1,
+          "status": 0
+        },
+        "reservedTime": [
+          "2018-05-02 14:00 ~ 2018-05-02 15:00"
+        ]
+      },
+      {
+        "site": {
+          "id": 2,
+          "status": 0
+        },
+        "reservedTime": [
+          "2018-05-02 18:00 ~ 2018-05-02 20:00",
+          "2018-05-02 9:00 ~ 2018-05-02 10:00"
+        ]
+      },
+      {
+        "site": {
+          "id": 3,
+          "status": 0
+        },
+        "reservedTime": [
+          "2018-05-02 14:00 ~ 2018-05-02 15:00",
+          "2018-05-02 18:00 ~ 2018-05-02 20:00"
+        ]
+      }
+    ]
+  }
+],
+
+"need":{
+  "date":"2018-05-08",
+  "time":"08:00-12:00",
+  "money":0
+},
+
+"sessions": [
+    {
+      "date": "2018-05-08",
+      "timeSlot": [
+        {
+          "time": "08:00-12:00",
+          "isSelected": true
+        }],
+      "isSelected": true
+    },
+    {
+      "date": "2018-05-09",
+      "timeSlot": [
+        {
+          "time": "14:00-18:00",
+          "isSelected": false
+        },
+        {
+          "time": "18:00-20:00",
+          "isSelected": false
+        }],
+      "isSelected": false
+    }
+  ]
+}
