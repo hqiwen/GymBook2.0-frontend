@@ -1,66 +1,83 @@
-import Vue from "vue";
+import Vue from "vue"
 import Router from "vue-router";
-import login from '../components/public/login.vue';
-import Demo from '../components/public/Demo.vue';
-import filterBox from '../components/public/filterBox.vue';
+import login from '../components/login.vue';
+import Demo from '../components/Demo.vue';
+import BookingHall from '../components/bookingHall.vue';
 
-Vue.use(Router);
+// const BookingHall=resolve=>{
+//     require.ensure(['../components/bookingHall.vue'],()=>{
+//       resolve(require('../components/bookingHall.vue'));
+//     })
+// };
 
-const navigation = resolve => {
-    require.ensure(["../components/public/navigation.vue"], () => {
-        resolve(require("../components/public/navigation.vue"));
-    });
-};
-import PingPangRoomDetails from "../components/showMoreDetailsByOrder/PingPangRoomDetails.vue";
-import SwimmingRoomDetails from "../components/showMoreDetailsByOrder/SwimmingRoomDetails.vue";
-import GymRoomDetails from "../components/showMoreDetailsByOrder/GymRoomDetails.vue";
-import BaseketballRoomDetails from "../components/showMoreDetailsByOrder/BaseketballRoomDetails.vue";
-import TennisRoomDetails from "../components/showMoreDetailsByOrder/TennisRoomDetails.vue";
-import BadmintonRoomDetails from "../components/showMoreDetailsByOrder/BadmintonRoomDetails.vue";
+import SouthBadminton from '../components/SouthCampus/badminton'
+import SouthTennis from '../components/SouthCampus/tennis'
+import SouthBasketball from '../components/SouthCampus/basketball'
+import SouthPingpong from '../components/SouthCampus/pingpong'
+import SouthSwimmingPool from '../components/SouthCampus/swimmingpool'
+import Fitness from '../components/SouthCampus/fitness'
+import ManageRule from '../components/manageRule'
+import BookCenter from '../components/bookCenter'
+import test from '../components/bookCenter'
+
+Vue.use(Router)
+
 
 const router = new Router({
     mode: "history",
+    scrollBehavior(to,from,savedPosition){
+        if(to.hash){
+
+            return {
+                selector: to.hash
+            }
+        }
+    },
     routes: [
         {
             path: "/",
-            name: "navigation",
-            component: navigation
+            name:'bookingHall',
+            component:BookingHall
         },
         {
-            path:'/filterBox',component:filterBox
+            path:'/south/badminton',
+            component:SouthBadminton
         },
+        {
+            path:'/south/tennis',
+            component:SouthTennis
+        },
+        {
+            path:'/south/basketball',
+            component:SouthBasketball
+        },
+        {
+            path:'/south/pingpong',
+            component:SouthPingpong
+        },
+        {
+            path:'/south/swimmingpool',
+            component:SouthSwimmingPool
+        },
+        {
+            path:'/south/fitness',
+            component:Fitness
+        },
+        {
+            path:'/bookcenter',
+            component:BookCenter
+        },
+
         { path: '/login', component: login },
         { path: '/demo', component: Demo },
         {
-            path: "/showMoreDetailsByOrder/PingPangRoom",
-            name: "PingPangRoomDetails",
-            component: PingPangRoomDetails
+            path:'/test',component:test
         },
         {
-            path: "/showMoreDetailsByOrder/SwimmingRoom",
-            name: "SwimmingRoomDetails",
-            component: SwimmingRoomDetails
-        },
-        {
-            path: "/showMoreDetailsByOrder/GymRoom",
-            name: "GymRoomDetails",
-            component: GymRoomDetails
-        },
-        {
-            path: "/showMoreDetailsByOrder/BaseketballRoom",
-            name: "BaseketballRoomDetails",
-            component: BaseketballRoomDetails
-        },
-        {
-            path: "/showMoreDetailsByOrder/TennisRoom",
-            name: "TennisRoomDetails",
-            component: TennisRoomDetails
-        },
-        {
-            path: "/showMoreDetailsByOrder/BadmintonRoom",
-            name: "BadmintonRoomDetails",
-            component: BadmintonRoomDetails
+            path:'/manageRule',
+            component:ManageRule
         }
+
     ]
 });
 export default router;

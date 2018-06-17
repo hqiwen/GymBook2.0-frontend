@@ -27,10 +27,13 @@ const fetch = (url, params, method) => {
 };
 
 const development = 'http://localhost:2618';
-const API = url => (params, method) => fetch(development + url, params, method);
+const API = (url, method) => params => fetch(development + url, params, method);
 
 export default {
-  //获取用户信息
-  getGymAPI: API('/gym', 'get'),
+  getGymSideInfoAPI: API('/gymSideInfo', 'get'),
+  getSitesTableAPI: API('/sitesTable', 'get'),
+  getStockListAPI: API('/stockList', 'get'),//获取对应订单详情信息
+
+  getGymListAPI:API('/list','get')
 }
 

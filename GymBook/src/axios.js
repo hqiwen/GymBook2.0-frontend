@@ -1,7 +1,4 @@
 import axios from 'axios'
-import store from './store'
-import router from './router'
-import { request } from 'https';
 
 axios.defaults.timeout=20000;
 
@@ -129,4 +126,5 @@ export default{
     {
         return axios_instance.put("http:\/\/localhost:8081/deposit",data);
     }
+    
 }
